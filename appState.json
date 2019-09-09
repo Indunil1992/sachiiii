@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "sachiiii/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"event Data\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n\n    callback(event);\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -39,6 +39,15 @@
         "customSecurityPolicy": {
           "Version": "2012-10-17",
           "Statement": []
+        },
+        "testCases": {
+          "871f41b1-ffe8-40b6-8e20-9c7d9a37c574": {
+            "id": "871f41b1-ffe8-40b6-8e20-9c7d9a37c574",
+            "name": "Test event",
+            "functionId": "74db0699-cd37-4451-b37b-dbd9b65d2094",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
         }
       }
     },
@@ -112,7 +121,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1568005636986
+    "lastSave": 1568005818954
   },
   "VCS_STATE": {
     "provider": "GitHub",
